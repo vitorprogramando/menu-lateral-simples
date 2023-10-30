@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu">
+        <!-- Botão de Fechar -->
+        <!-- Pode ser trocado por uma imagem ou icone -->
+        <div class="icon-close">
+            <h1>X</h1>
+        </div>
+        <!-- Menu -->
+        <ul>
+            <li>
+                <a href="#">Menu 1</a>
+            </li>
+            <li>
+                <a href="#">Menu 2</a>
+            </li>
+            <li>
+                <a href="#">Menu 3</a>
+            </li>
+            <li>
+                <a href="#">Menu 4</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Corpo do Site -->
+    <div class="container">
+        <div class="icon-menu">
+            <p>Carros</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <style>
+            /* corpo do site */
+/* Talvez você não precise deste layout, mas ele ajuda a evitar alguns erros de tela*/
+body {
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+/* O menu */
+/* O menu começara escondido */
+.menu {
+    background: #686868 repeat left top;
+    left: -350px;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    width: 350px;
+}
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    line-height: 45px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 3px;
+}
+.menu a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 2px solid;
+}
+.icon-close {
+    cursor: pointer;
+    padding-right: 30px;
+    text-align: right;
+    padding-top: 10px;
+}
+.icon-close h1 {
+    cursor: pointer;
+    padding-left: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+.icon-menu {
+    cursor: pointer;
+    font-size: 30px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    text-decoration: none;
+}
+.icon-menu i {
+    margin-right: 5px;
+}
+.icon-menu p {
+    border-bottom: 2px solid;
+    max-width: 79px;
+}
+        </style>
+        <script>
+            function moverMenu(distMenu, distBody) {
+    $('.menu').animate({
+        left: distMenu + "px"
+    }, 200);
+    $('body').animate({
+        left: distBody + "px"
+    }, 200);
+}
+$(document).ready(() => {
+    $('.icon-menu').click(() => { moverMenu(0, 350) });
+    $('.icon-close').click(() => { moverMenu(-350, 0) });
+});
+        </script>
+</body>
+
+</html>
